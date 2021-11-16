@@ -1,0 +1,9 @@
+{
+  "name": "recoil-comeback",
+  "version": "1.0.0",
+  "description": "Rehydrates Recoil state after the window reloads.",
+  "main": "index.js",
+  "repository": "git@github.com:mtilda/recoil-comeback.git",
+  "author": "Mathilda <me@mathilda.dev>",
+  "license": "MIT"
+}
