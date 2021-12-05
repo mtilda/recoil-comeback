@@ -22,18 +22,35 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
               </Link>
               <ul>
                 <li>
+                  <Link href={routes.testNumber}>
+                    Number
+                  </Link>
+                  <ul>
+                    <li>
+                      <Link href={routes.testNumberRead}>
+                        Read
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href={routes.testNumberWrite}>
+                        Write
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+                <li>
                   <Link href={routes.testString}>
                     String
                   </Link>
                   <ul>
                     <li>
-                      <Link href={routes.testStringWrite}>
-                        Write
+                      <Link href={routes.testStringRead}>
+                        Read
                       </Link>
                     </li>
                     <li>
-                      <Link href={routes.testStringRead}>
-                        Read
+                      <Link href={routes.testStringWrite}>
+                        Write
                       </Link>
                     </li>
                   </ul>
