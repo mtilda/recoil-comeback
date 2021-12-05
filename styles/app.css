@@ -1,0 +1,48 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+ul, ol {
+  padding-inline-start: 20px;
+}
+
+div#__next {
+  display: grid;
+  grid-template-areas:  "h h h h h h h h h h h h"
+  "a a m m m m m m m m m m"
+  "f f f f f f f f f f f f";
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 50px auto 50px;
+  height: 100vh;
+}
+
+header {
+  grid-area: h;
+  padding: 10px;
+}
+
+aside {
+  grid-area: a;
+  margin: 10px;
+  padding: 10px;
+}
+
+main {
+  grid-area: m;
+  margin: 10px;
+}
+
+h1, h2, h3, h4, h5, h6, p, input, hr {
+  margin: 0 0 10px 0;
+}
+
+.box {
+  padding: 20px;
+  border: 2px solid #2D2D2D;
+  border-radius: 10px;
+}
