@@ -1,0 +1,138 @@
+env:
+  browser: true
+  es2021: true
+  node: true
+extends:
+  - 'eslint:recommended'
+  - 'plugin:@typescript-eslint/recommended'
+  - 'plugin:react/recommended'
+  - 'plugin:react/jsx-runtime'
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+  ecmaVersion: 12
+  emitWarning: true
+  jsxPragma: null # for @typescript/eslint-parser
+  sourceType: module
+plugins:
+ - import
+ - simple-import-sort
+rules:
+  # @typescript-eslint/indent issue: https://github.com/typescript-eslint/typescript-eslint/issues/1824
+  '@typescript-eslint/indent':
+    - error
+    - 2
+    - SwitchCase: 1
+  '@typescript-eslint/member-delimiter-style':
+    - error
+  '@typescript-eslint/no-unused-vars':
+    - off
+  '@typescript-eslint/no-empty-function':
+    - off
+  '@typescript-eslint/padding-line-between-statements':
+    - error
+    - {
+      blankLine: 'always',
+      prev: '*',
+      next: [
+        'class',
+        'export',
+        'iife',
+        'interface',
+        'multiline-const',
+        'multiline-expression',
+        'type',
+      ]
+    }
+    - { blankLine: 'always', prev: 'directive', next: '*' }
+    - { blankLine: 'any', prev: 'directive', next: 'directive' }
+    - { blankLine: 'always', prev: '*', next: 'export' }
+    - { blankLine: 'any', prev: 'export', next: 'export' }
+    - { blankLine: 'always', prev: 'import', next: '*' }
+    - { blankLine: 'any', prev: 'import', next: 'import' }
+  '@typescript-eslint/semi':
+    - error
+  array-bracket-spacing:
+    - error
+    - always
+    - arraysInArrays: false
+      objectsInArrays: true
+      singleValue: false
+  comma-dangle:
+    - error
+    - always-multiline
+  eol-last:
+    - error
+    - always
+  import/first:
+    - error
+  import/newline-after-import:
+    - error
+  import/no-duplicates:
+    - error
+  indent: off
+  jsx-quotes:
+    - error
+    - prefer-single
+  key-spacing:
+    - error
+    - afterColon: true
+      beforeColon: false
+      mode: minimum
+  keyword-spacing:
+    - error
+  linebreak-style:
+    - error
+    - unix
+  multiline-comment-style:
+    - error
+    - separate-lines
+  no-multiple-empty-lines:
+    - warn
+    - max: 2
+  no-trailing-spaces:
+    - error
+  no-unused-vars:
+    - off
+  object-curly-newline:
+    - error
+    -
+      consistent: true
+      multiline: true
+  object-curly-spacing:
+    - error
+    - always
+    - arraysInObjects: true
+      objectsInObjects: false
+  object-property-newline:
+    - error
+    - allowAllPropertiesOnSameLine: true
+  padding-line-between-statements:
+    - off
+  quotes:
+    - warn
+    - single
+  react/jsx-closing-bracket-location:
+    - error
+    - line-aligned
+  react/display-name:
+    - warn
+  # react-hooks/exhaustive-deps:
+  #   - warn
+  #   - additionalHooks: (useRecoilCallback|useRecoilTransaction_UNSTABLE)
+  # react-hooks/rules-of-hooks:
+  #   - error
+  react/jsx-filename-extension:
+    - 1
+    - extensions:
+        - .js
+        - .jsx
+        - .ts
+        - .tsx
+  react/jsx-uses-vars: warn
+  react/prop-types: off
+  react/react-in-jsx-scope: off
+  semi:
+    - off
+  space-infix-ops:
+    - error
