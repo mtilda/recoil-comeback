@@ -4,6 +4,7 @@ import { FC } from 'react';
 import { RecoilRoot } from 'recoil';
 import routes from '../routes';
 import '../styles/app.css';
+import '../styles/switch.css';
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
   return (

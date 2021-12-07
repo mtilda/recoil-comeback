@@ -9,12 +9,15 @@ const TestBooleanRead: FC = () => {
   return (
     <>
       <h2>Test: <label htmlFor='write'>Read boolean state</label></h2>
-      <input
-        id='write'
-        type='checkbox'
-        checked={boolean}
-        disabled
-      />
+      <label className='switch'>
+        <input
+          id='write'
+          type='checkbox'
+          checked={boolean}
+          disabled
+        />
+        <span className='slider round'></span>
+      </label>
       <hr />
       <p>
         <Link href={routes.testBooleanWrite}>
