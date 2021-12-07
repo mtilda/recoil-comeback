@@ -22,6 +22,23 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
               </Link>
               <ul>
                 <li>
+                  <Link href={routes.testDate}>
+                    Date
+                  </Link>
+                  <ul>
+                    <li>
+                      <Link href={routes.testDateRead}>
+                        Read
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href={routes.testDateWrite}>
+                        Write
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+                <li>
                   <Link href={routes.testNumber}>
                     Number
                   </Link>
