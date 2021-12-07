@@ -1,5 +1,8 @@
 const routes = {
   test: '/test',
+  testBoolean: '/test/boolean',
+  testBooleanRead: '/test/boolean/read',
+  testBooleanWrite: '/test/boolean/write',
   testDate: '/test/date',
   testDateRead: '/test/date/read',
   testDateWrite: '/test/date/write',

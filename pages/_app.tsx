@@ -22,6 +22,23 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
               </Link>
               <ul>
                 <li>
+                  <Link href={routes.testBoolean}>
+                    Boolean
+                  </Link>
+                  <ul>
+                    <li>
+                      <Link href={routes.testBooleanRead}>
+                        Read
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href={routes.testBooleanWrite}>
+                        Write
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+                <li>
                   <Link href={routes.testDate}>
                     Date
                   </Link>
