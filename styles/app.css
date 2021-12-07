@@ -46,3 +46,23 @@ h1, h2, h3, h4, h5, h6, p, input, label, hr {
   border: 2px solid #2D2D2D;
   border-radius: 10px;
 }
+
+code {
+  display: block;
+  padding: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+code * {
+  padding: 0;
+  margin: 0;
+}
+
+code p {
+  height: 1.5em;
+}
+
+code span:last-child {
+  height: 0;
+}
