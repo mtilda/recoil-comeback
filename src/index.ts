@@ -21,27 +21,42 @@ const createComeback = (
       const store = getStore();
 
       if (node.key in store)
-        setSelf(store[node.key]);
+        setSelf(reconstructItem(store[node.key]));
     }
 
-    onSet((newValue: any) => {
+    onSet((newValue: unknown) => {
       const store = getStore();
 
       setStore({
         ...store,
-        [node.key]: newValue,
+        [node.key]: {
+          value: newValue,
+          class: Object.prototype.toString.call(newValue),
+        },
       });
     });
   };
 
-  const getStore = (): Record<string, unknown> => {
+  /**
+   * Construct a new instance of the item's original class
+   */
+  const reconstructItem = (item: Item): unknown => {
+    switch (item.class) {
+      case '[object Date]':
+        return new Date(item.value as string | number | Date);
+      default:
+        return item.value;
+    }
+  };
+
+  const getStore = (): Store => {
     const jsonString = storage.getItem(key);
     if (typeof jsonString === 'string')
       return parseJson(jsonString);
     return {};
   };
 
-  const setStore = (store: Record<string, any>): void => {
+  const setStore = (store: Store): void => {
     try {
       storage.setItem(key, JSON.stringify(store));
     } catch (error) {
@@ -61,6 +76,12 @@ const createComeback = (
   return comeback;
 };
 
+interface Item {
+  value: unknown;
+  class: string;
+}
+
+type Store = Record<string, Item>;
 
 /**
  * Based on built-in interface `Storage`
