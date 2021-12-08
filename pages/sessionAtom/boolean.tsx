@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { ChangeEvent, FC } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import CodeBlock from '../../components/CodeBlock';
 import booleanState from '../../state/session/booleanState';
@@ -6,6 +6,8 @@ import booleanState from '../../state/session/booleanState';
 const SessionBoolean: FC = () => {
   const [ recoilState, setRecoilState ] = useRecoilState(booleanState);
   const recoilValue = useRecoilValue(booleanState);
+
+  console.log(recoilState);
 
   return (
     <>
@@ -19,7 +21,7 @@ const SessionBoolean: FC = () => {
           id='recoil-state'
           type='checkbox'
           checked={recoilState}
-          onChange={(e) => setRecoilState(e.currentTarget.checked)}
+          onClick={(e) => setRecoilState(e.currentTarget.checked)}
         />
         <span className='slider round'></span>
       </label>
