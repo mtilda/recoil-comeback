@@ -10,8 +10,13 @@ const CodeBlock: FC<CodeBlockProps> = ({ path }) => {
     ( async () => {
       try {
         const newContent = String((await thisRepo.get(path)).data);
-        setContent(newContent);
+
+        setContent(newContent
+          .replace(/(import|export).*;\n/g, '')
+          .replace(/(^\n*|\n*$)/g, ''),
+        );
       } catch (error) {
+        console.error(error);
         setContent('// Error loading code block');
       }
     })();
@@ -19,7 +24,7 @@ const CodeBlock: FC<CodeBlockProps> = ({ path }) => {
 
   return (
     <SyntaxHighlighter
-      language='javascript'
+      language='typescript'
       style={a11yDark}
     >
       {content}
