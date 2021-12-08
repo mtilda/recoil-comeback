@@ -18,77 +18,29 @@ const App: FC<AppProps> = ({ Component, pageProps }) => {
         <nav>
           <ul>
             <li>
-              <Link href={routes.test}>
-                Test
+              <Link href={routes.sessionAtom}>
+                sessionAtom
               </Link>
               <ul>
                 <li>
-                  <Link href={routes.testBoolean}>
+                  <Link href={routes.sessionAtomBoolean}>
                     Boolean
                   </Link>
-                  <ul>
-                    <li>
-                      <Link href={routes.testBooleanRead}>
-                        Read
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href={routes.testBooleanWrite}>
-                        Write
-                      </Link>
-                    </li>
-                  </ul>
                 </li>
                 <li>
-                  <Link href={routes.testDate}>
+                  <Link href={routes.sessionAtomDate}>
                     Date
                   </Link>
-                  <ul>
-                    <li>
-                      <Link href={routes.testDateRead}>
-                        Read
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href={routes.testDateWrite}>
-                        Write
-                      </Link>
-                    </li>
-                  </ul>
                 </li>
                 <li>
-                  <Link href={routes.testNumber}>
+                  <Link href={routes.sessionAtomNumber}>
                     Number
                   </Link>
-                  <ul>
-                    <li>
-                      <Link href={routes.testNumberRead}>
-                        Read
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href={routes.testNumberWrite}>
-                        Write
-                      </Link>
-                    </li>
-                  </ul>
                 </li>
                 <li>
-                  <Link href={routes.testString}>
+                  <Link href={routes.sessionAtomString}>
                     String
                   </Link>
-                  <ul>
-                    <li>
-                      <Link href={routes.testStringRead}>
-                        Read
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href={routes.testStringWrite}>
-                        Write
-                      </Link>
-                    </li>
-                  </ul>
                 </li>
               </ul>
             </li>

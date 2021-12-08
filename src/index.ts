@@ -1,4 +1,5 @@
 import { AtomEffect } from 'recoil';
+import sessionAtom from './sessionAtom';
 
 /**
  * Creates a Recoil effect to
@@ -91,4 +92,7 @@ export interface ComebackStorage {
   getItem(key: string): null | string;
 }
 
-export { createComeback };
+export {
+  createComeback,
+  sessionAtom,
+};

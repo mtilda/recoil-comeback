@@ -8,8 +8,12 @@ const CodeBlock: FC<CodeBlockProps> = ({ path }) => {
 
   useEffect(() => {
     ( async () => {
-      const data = String((await thisRepo.get(path)).data);
-      setContent(data);
+      try {
+        const newContent = String((await thisRepo.get(path)).data);
+        setContent(newContent);
+      } catch (error) {
+        setContent('// Error loading code block');
+      }
     })();
   }, [path]);
 
