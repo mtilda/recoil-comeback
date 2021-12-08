@@ -28,7 +28,7 @@ const SessionString: FC = () => {
         id='recoil-value'
         type='text'
         value={recoilValue}
-        onChange={(e) => setRecoilState(e.target.value)}
+        disabled
       />
 
       <hr />
